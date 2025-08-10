@@ -7,53 +7,59 @@
 - **Duration**: 16 Weeks  
 - **Mentor**: Neela Sanrosh
 
-  # 🚚 Supply Chain Optimization using PuLP
+  # 🚚 Solving the Transportation Problem using PuLP
 
-## 📖 Project Overview
-This project is part of my internship deliverables at **CodTech IT Solutions**, focused on solving a classic supply chain optimization problem using **Linear Programming**. The objective is to determine the optimal shipment quantities from multiple warehouses to retail stores while minimizing transportation costs and satisfying supply and demand constraints.
+## 📖 Overview
+This project demonstrates how to solve a classic **Transportation Problem** using **Linear Programming** with the **PuLP** library in Python. It is part of my internship deliverables at **CodTech IT Solutions**, under the Data Science domain.
 
-The solution is implemented using the **PuLP** library in Python and demonstrates practical applications of operations research in logistics and resource allocation.
+The goal is to determine the most cost-effective way to transport goods from multiple warehouses to multiple retail stores, while satisfying supply and demand constraints and minimizing total transportation cost.
 
 ---
 
 ## 📌 Problem Statement
 A company operates:
-- **3 Warehouses** with limited supply  
-- **4 Retail Stores** with fixed demand  
-- Known **transportation costs per unit** between each warehouse-store pair
+- **3 Warehouses**, each with a limited supply of goods  
+- **4 Retail Stores**, each with a fixed demand  
+- Known **transportation costs per unit** from each warehouse to each store
 
-### Goal:
-- Satisfy all supply and demand constraints  
-- Minimize the total transportation cost
+### Objective:
+Determine how many units to ship from each warehouse to each store such that:
+- ✅ All supply and demand constraints are satisfied  
+- 💰 Total transportation cost is minimized
 
 ---
 
 ## 🛠️ Approach
 
-### 🔹 Step 1: Define Data
-- Supply available at each warehouse  
-- Demand required at each retail store  
-- Transportation cost matrix
+### 🔹 Step 1: Model Setup
+- Defined supply values for each warehouse  
+- Defined demand values for each retail store  
+- Created a cost matrix representing transportation costs between each warehouse–store pair
 
-### 🔹 Step 2: Formulate LP Model
-- **Decision Variables**: Units to transport from each warehouse to each store  
+### 🔹 Step 2: Formulation in PuLP
+- **Decision Variables**: Quantity of goods shipped from each warehouse to each store  
 - **Objective Function**: Minimize total transportation cost  
 - **Constraints**:
-  - Supply limits for each warehouse  
-  - Demand requirements for each store
+  - **Supply Constraints**: Total shipments from a warehouse ≤ its supply  
+  - **Demand Constraints**: Total shipments to a store ≥ its demand
 
-### 🔹 Step 3: Solve the Model
-- Used PuLP’s built-in **CBC solver**  
-- Extracted optimal shipment plan and minimum cost
+### 🔹 Step 3: Solution
+- Solved using PuLP’s built-in **CBC solver**  
+- Extracted optimal shipment plan and total transportation cost  
+- Displayed results in a readable format
 
 ---
 
 ## 📊 Results
-- ✅ Optimal shipping quantities from each warehouse to each store  
-- 💰 Minimum transportation cost calculated by the model  
-- 📈 Model satisfies all constraints and provides a cost-efficient logistics plan
+
+### ✅ Optimal Shipment Plan
+The model provides the exact number of units to be shipped from each warehouse to each retail store to meet demand efficiently.
+
+### 💸 Minimum Total Cost
+The total transportation cost is minimized while satisfying all constraints. This cost is computed based on the optimal allocation.
 
 ---
+
 
 ## 📁 Repository Contents
 
